@@ -28,4 +28,27 @@ class Network
     end
     hospital_doctors
   end
+
+  def doctors_by_specialty
+    doctor_specialties = Hash.new { |hash, key| hash[key] = []}
+    @hospitals.select do |hospital|
+      hospital.doctors.select do |doctor|
+        doctor_specialties[doctor.specialty] << doctor.name
+      end
+    end
+    doctor_specialties
+  end
+
+  def average_doctors_salary
+    average_pay = []
+    @hospitals.each do |hospital|
+      hospital.doctors.each do |doctor|
+        average_pay << doctor.salary
+      end
+    end
+    average = ((average_pay.sum.to_f) / average_pay.length)
+    solution = ('%.2f' % average).to_f
+    solution
+    require "pry"; binding.pry
+  end
 end
