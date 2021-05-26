@@ -49,6 +49,6 @@ class Network
     average = ((average_pay.sum.to_f) / average_pay.length)
     solution = ('%.2f' % average).to_f
     solution
-    require "pry"; binding.pry
+
   end
 end
