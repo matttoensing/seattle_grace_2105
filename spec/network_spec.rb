@@ -22,7 +22,7 @@ RSpec.describe Network do
     expect(gsmn.hospitals).to eq([])
   end
 
-  it 'can add hospitals' do
+  it 'can add hospitals which have doctors' do
     gsmn = Network.new("Greater Seattle Medical Network")
     meredith = Doctor.new({name: "Meredith Grey", specialty: "General Surgery", education: "Harvard University", salary: 100_000})
     alex = Doctor.new({name: "Alex Karev", specialty: "Pediatric Surgery", education: "Johns Hopkins University", salary: 90_000})
